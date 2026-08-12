@@ -1,0 +1,31 @@
+index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offload: Pause and Reset</title>
+
+    <!-- 🌟 PASTE THIS NEW CODE RIGHT HERE 🌟 -->
+    <!-- Link to your App Manifest -->
+    <link rel="manifest" href="./manifest.json">
+
+    <!-- Script to register your service worker -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js')
+            .then(reg => console.log('Offload PWA Registered!', reg))
+            .catch(err => console.log('Registration failed:', err));
+        });
+      }
+    </script>
+    <!-- 🌟 END OF NEW CODE 🌟 -->
+
+    <!-- Your existing CSS styles or other tags continue below here... -->
+</head>
+<body>
+    <!-- Your existing app content stays exactly the same -->
+</body>
+</html>
